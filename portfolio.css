@@ -285,14 +285,16 @@ section {
 .education-timeline {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .edu-card {
   background: var(--card-bg);
   border: 1px solid var(--glass-border);
-  border-radius: 28px;
-  padding: 40px;
-  max-width: 750px;
+  border-radius: 24px;
+  padding: 28px;
+  max-width: 480px;
   width: 100%;
   backdrop-filter: blur(10px);
   transition: 0.4s;
