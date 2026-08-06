@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ...document.querySelectorAll(".skill-card"),
     ...document.querySelectorAll(".project-card"),
     ...document.querySelectorAll(".section-title"),
+    ...document.querySelectorAll(".about-card"),
+    ...document.querySelectorAll(".edu-card"),
+    document.querySelector(".about-text"),
+    document.querySelector(".feedback-form"),
   ];
 
   const revealOnScroll = new IntersectionObserver(
@@ -126,4 +130,141 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial update and resize handler
   window.addEventListener("resize", moveIndicator);
   setTimeout(moveIndicator, 200);
+
+  // Scroll Restoration on Refresh
+  if (window.history.scrollRestoration) {
+    window.history.scrollRestoration = "manual";
+  }
+
+  window.addEventListener("beforeunload", () => {
+    sessionStorage.setItem("scrollPosition", window.scrollY);
+  });
+
+  const savedPosition = sessionStorage.getItem("scrollPosition");
+  if (window.location.hash) {
+    const targetElement = document.querySelector(window.location.hash);
+    if (targetElement) {
+      setTimeout(() => {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: "auto",
+        });
+      }, 100);
+    }
+  } else if (savedPosition !== null) {
+    setTimeout(() => {
+      window.scrollTo({
+        top: parseInt(savedPosition, 10),
+        behavior: "auto",
+      });
+    }, 100);
+  }
+
+  // ========== Feedback Star Rating ==========
+  const starsContainer = document.getElementById("feedback-stars");
+  let currentRating = 0;
+
+  if (starsContainer) {
+    const stars = starsContainer.querySelectorAll("i");
+
+    stars.forEach((star) => {
+      star.addEventListener("mouseenter", () => {
+        const rating = parseInt(star.dataset.rating);
+        stars.forEach((s) => {
+          const r = parseInt(s.dataset.rating);
+          if (r <= rating) {
+            s.classList.add("hovered");
+          } else {
+            s.classList.remove("hovered");
+          }
+        });
+      });
+
+      star.addEventListener("mouseleave", () => {
+        stars.forEach((s) => s.classList.remove("hovered"));
+      });
+
+      star.addEventListener("click", () => {
+        currentRating = parseInt(star.dataset.rating);
+        stars.forEach((s) => {
+          const r = parseInt(s.dataset.rating);
+          if (r <= currentRating) {
+            s.classList.add("active");
+          } else {
+            s.classList.remove("active");
+          }
+        });
+      });
+    });
+  }
+
+  // ========== Feedback Form Submission ==========
+  const feedbackForm = document.getElementById("feedback-form");
+  const feedbackSuccess = document.getElementById("feedback-success");
+
+  if (feedbackForm) {
+    feedbackForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      // Animate button
+      const submitBtn = document.getElementById("feedback-submit");
+      submitBtn.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> <span>Sending...</span>';
+      submitBtn.disabled = true;
+
+      // Simulate sending (replace with actual API call)
+      setTimeout(() => {
+        feedbackForm.style.display = "none";
+        feedbackSuccess.classList.add("show");
+
+        // Reset form after a delay
+        setTimeout(() => {
+          feedbackForm.reset();
+          currentRating = 0;
+          if (starsContainer) {
+            starsContainer.querySelectorAll("i").forEach((s) => s.classList.remove("active"));
+          }
+          submitBtn.innerHTML = '<i class="bx bx-send"></i> <span>Send Feedback</span>';
+          submitBtn.disabled = false;
+        }, 1000);
+      }, 1500);
+    });
+  }
+
+  // ========== Animated Stat Counters ==========
+  const statNumbers = document.querySelectorAll(".stat-number");
+
+  if (statNumbers.length > 0) {
+    const animateCounter = (el) => {
+      const target = parseInt(el.dataset.target);
+      const duration = 1500;
+      const start = performance.now();
+
+      const update = (now) => {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(target * eased);
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      };
+      requestAnimationFrame(update);
+    };
+
+    const statObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            statObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    statNumbers.forEach((num) => statObserver.observe(num));
+  }
 });
