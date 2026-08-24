@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,7 @@
     />
     <meta
       name="keywords"
-      content="Ahmed Emad Ibrahim, Front-End Developer, React.js,Next.js, Portfolio, Web Development"
+      content="Ahmed Emad Ibrahim, Front-End Developer, React.js, Next.js, Portfolio, Web Development"
     />
 
     <!-- Boxicons CDN -->
@@ -26,34 +26,41 @@
     <!-- Header -->
     <header>
       <a href="#" class="logo">AHMED <span>EMAD IBRAHIM</span></a>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#tools">Tools</a>
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#feedback">Feedback</a>
-        <a href="#contact">Contact</a>
+      <nav id="main-nav">
+        <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
+        <a href="#about" data-en="About" data-ar="عني">About</a>
+        <a href="#tools" data-en="Tools" data-ar="أدواتي">Tools</a>
+        <a href="#education" data-en="Education" data-ar="التعليم">Education</a>
+        <a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a>
+        <a href="#feedback" data-en="Feedback" data-ar="آراء">Feedback</a>
+        <a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a>
       </nav>
-      <div id="menu-icon" class="menu-icon">
-        <i class="bx bx-menu"></i>
+      <div class="header-controls">
+        <!-- Language Toggle -->
+        <button id="lang-toggle" class="control-btn" title="Switch Language" aria-label="Switch Language">
+          <span id="lang-label">AR</span>
+        </button>
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="control-btn" title="Toggle Theme" aria-label="Toggle Theme">
+          <i class="bx bx-moon" id="theme-icon"></i>
+        </button>
+        <div id="menu-icon" class="menu-icon">
+          <i class="bx bx-menu"></i>
+        </div>
       </div>
     </header>
 
     <!-- Home Section -->
     <section class="home" id="home">
       <div class="home-content">
-        <h1>Hi, I'm <span>Ahmed Emad Ibrahim</span></h1>
-        <h2>Front-End Developer (React.js,Next.js)</h2>
-        <!-- <p>
-          Passionate about building modern, high-performance, and responsive web
-          applications. I specialize in creating seamless user experiences using
-          HTML, CSS, JavaScript,Tailwindcss ,and React.js and Next.js.
-        </p> -->
+        <h1>
+          <span id="home-greeting" data-en="Hi, I'm" data-ar="أنا">Hi, I'm</span>
+          <span id="typed-text" class="typed-highlight"></span><span class="type-cursor">|</span>
+        </h1>
 
         <div class="buttons">
           <a href="Ahmed_Emad_Ibrahim_CV2 Last5.pdf" class="btn btn-primary" download>
-            <i class="bx bxs-file-pdf"></i> Download CV
+            <i class="bx bxs-file-pdf"></i> <span data-en="Download CV" data-ar="تحميل السيرة الذاتية">Download CV</span>
           </a>
           <a
             href="https://www.linkedin.com/in/ahmed-emad-0648172a4/"
@@ -70,22 +77,20 @@
             <i class="bx bxl-github"></i> GitHub
           </a>
         </div>
-
-
       </div>
 
       <!-- Home Image -->
       <div class="home-image">
-        <img src="Me.jpg" alt="Ahmed Emad" />
+        <img src="Me.jpg" alt="Ahmed Emad" loading="eager" />
       </div>
     </section>
 
     <!-- About Section -->
     <section class="about" id="about">
-      <h2 class="section-title">About <span>Me</span></h2>
+      <h2 class="section-title" data-en="About <span>Me</span>" data-ar="<span>عني</span>">About <span>Me</span></h2>
       <div class="about-container">
         <div class="about-text">
-          <p class="about-intro">
+          <p class="about-intro" data-en="Passionate about building modern, high-performance, and responsive web applications. I specialize in creating seamless user experiences using <span class='highlight'>HTML</span>, <span class='highlight'>CSS</span>, <span class='highlight'>JavaScript</span>, <span class='highlight'>Tailwindcss</span>, and <span class='highlight'>React.js</span> and <span class='highlight'>Next.js</span>." data-ar="شغوف ببناء تطبيقات الويب الحديثة عالية الأداء والمتجاوبة. أتخصص في إنشاء تجارب مستخدم سلسة باستخدام <span class='highlight'>HTML</span> و<span class='highlight'>CSS</span> و<span class='highlight'>JavaScript</span> و<span class='highlight'>Tailwindcss</span> و<span class='highlight'>React.js</span> و<span class='highlight'>Next.js</span>.">
             Passionate about building modern, high-performance, and responsive web
             applications. I specialize in creating seamless user experiences using
             <span class="highlight">HTML</span>, <span class="highlight">CSS</span>,
@@ -94,16 +99,16 @@
           </p>
           <div class="about-stats">
             <div class="stat-item">
-              <span class="stat-number" data-target="3">0</span><span class="stat-plus">+</span>
-              <span class="stat-label">Projects</span>
+              <span class="stat-number" data-target="3">3</span><span class="stat-plus">+</span>
+              <span class="stat-label" data-en="Projects" data-ar="مشاريع">Projects</span>
             </div>
             <div class="stat-item">
-              <span class="stat-number" data-target="6">0</span><span class="stat-plus">+</span>
-              <span class="stat-label">Technologies</span>
+              <span class="stat-number" data-target="6">6</span><span class="stat-plus">+</span>
+              <span class="stat-label" data-en="Technologies" data-ar="تقنيات">Technologies</span>
             </div>
             <div class="stat-item">
-              <span class="stat-number" data-target="7">0</span>
-              <span class="stat-label">Certificates</span>
+              <span class="stat-number" data-target="7">7</span>
+              <span class="stat-label" data-en="Certificates" data-ar="شهادات">Certificates</span>
             </div>
           </div>
         </div>
@@ -112,22 +117,22 @@
             <div class="about-card-icon">
               <i class="bx bx-target-lock"></i>
             </div>
-            <h3>My Goal</h3>
-            <p>To create web experiences that are not only functional but truly delightful to use.</p>
+            <h3 data-en="My Goal" data-ar="هدفي">My Goal</h3>
+            <p data-en="To create web experiences that are not only functional but truly delightful to use." data-ar="إنشاء تجارب ويب ليست وظيفية فحسب، بل ممتعة حقاً للاستخدام.">To create web experiences that are not only functional but truly delightful to use.</p>
           </div>
           <div class="about-card">
             <div class="about-card-icon">
               <i class="bx bx-rocket"></i>
             </div>
-            <h3>My Approach</h3>
-            <p>Clean code, pixel-perfect designs, and a deep focus on performance and accessibility.</p>
+            <h3 data-en="My Approach" data-ar="أسلوبي">My Approach</h3>
+            <p data-en="Clean code, pixel-perfect designs, and a deep focus on performance and accessibility." data-ar="كود نظيف، تصاميم دقيقة، وتركيز عميق على الأداء وسهولة الوصول.">Clean code, pixel-perfect designs, and a deep focus on performance and accessibility.</p>
           </div>
           <div class="about-card">
             <div class="about-card-icon">
               <i class="bx bx-heart"></i>
             </div>
-            <h3>My Passion</h3>
-            <p>Continuous learning, open-source contributions, and building things that matter.</p>
+            <h3 data-en="My Passion" data-ar="شغفي">My Passion</h3>
+            <p data-en="Continuous learning, open-source contributions, and building things that matter." data-ar="التعلم المستمر، المساهمة في المصدر المفتوح، وبناء أشياء ذات معنى.">Continuous learning, open-source contributions, and building things that matter.</p>
           </div>
         </div>
       </div>
@@ -135,7 +140,7 @@
 
     <!-- Skills Section -->
     <section class="tools" id="tools">
-      <h2 class="section-title">My <span>Tools</span></h2>
+      <h2 class="section-title" data-en="My <span>Tools</span>" data-ar="<span>أدواتي</span>">My <span>Tools</span></h2>
       <div class="skills-container">
         <div class="skill-card">
           <i class="bx bxl-html5"></i>
@@ -178,7 +183,7 @@
 
     <!-- Education Section -->
     <section class="education" id="education">
-      <h2 class="section-title">My <span>Education</span></h2>
+      <h2 class="section-title" data-en="My <span>Education</span>" data-ar="<span>تعليمي</span>">My <span>Education</span></h2>
       <div class="education-timeline">
 
         <!-- Degree Card -->
@@ -189,43 +194,34 @@
             </div>
             <div class="edu-meta">
               <span class="edu-badge">2022 – 2026</span>
-              <span class="edu-status">Graduated</span>
+              <span class="edu-status" data-en="Graduated" data-ar="تخرجت">Graduated</span>
             </div>
           </div>
-          <h3 class="edu-degree">Bachelor's Degree</h3>
-          <p class="edu-field">Business Information Systems (BIS)</p>
+          <h3 class="edu-degree" data-en="Bachelor's Degree" data-ar="درجة البكالوريوس">Bachelor's Degree</h3>
+          <p class="edu-field" data-en="Business Information Systems (BIS)" data-ar="نظم المعلومات الإدارية">Business Information Systems (BIS)</p>
           <p class="edu-university">
             <i class="bx bx-buildings"></i>
             MET(misr engineering and technology) &amp; Mansoura
-       
           </p>
           
           <div class="edu-divider"></div>
           <div class="edu-highlights">
             <div class="edu-highlight">
               <i class="bx bx-code-alt"></i>
-              <span>Programming Fundamentals</span>
+              <span data-en="Programming Fundamentals" data-ar="أساسيات البرمجة">Programming Fundamentals</span>
             </div>
             <div class="edu-highlight">
               <i class="bx bx-data"></i>
-              <span>Front-end Development</span>
+              <span data-en="Front-end Development" data-ar="تطوير الواجهة الأمامية">Front-end Development</span>
             </div>
             <div class="edu-highlight">
               <i class="bx bx-globe"></i>
-              <span>Web Development</span>
+              <span data-en="Web Development" data-ar="تطوير الويب">Web Development</span>
             </div>
             <div class="edu-highlight">
               <i class="bx bx-network-chart"></i>
-              <span>Information Systems</span>
+              <span data-en="Information Systems" data-ar="نظم المعلومات">Information Systems</span>
             </div>
-            <!-- <div class="edu-highlight">
-              <i class="bx bx-line-chart"></i>
-              <span>Business Analysis</span>
-            </div>
-            <div class="edu-highlight">
-              <i class="bx bx-chip"></i>
-              <span>Software Engineering</span> -->
-            <!-- </div> -->
           </div>
         </div>
 
@@ -236,12 +232,12 @@
               <i class="bx bxs-certification"></i>
             </div>
             <div class="edu-meta">
-              <span class="edu-badge">NTI Graduate</span>
-              <span class="edu-status">Completed</span>
+              <span class="edu-badge" data-en="NTI Graduate" data-ar="خريج NTI">NTI Graduate</span>
+              <span class="edu-status" data-en="Completed" data-ar="مكتمل">Completed</span>
             </div>
           </div>
-          <h3 class="edu-degree">Front-End Development Diploma</h3>
-          <p class="edu-field">Professional Diploma</p>
+          <h3 class="edu-degree" data-en="Front-End Development Diploma" data-ar="دبلومة تطوير الواجهة الأمامية">Front-End Development Diploma</h3>
+          <p class="edu-field" data-en="Professional Diploma" data-ar="دبلومة احترافية">Professional Diploma</p>
           <p class="edu-university">
             <i class="bx bx-buildings"></i>
             National Telecommunication Institute (NTI)
@@ -250,19 +246,11 @@
           <div class="edu-highlights">
             <div class="edu-highlight">
               <i class="bx bxl-html5"></i>
-              <span>HTML5 & CSS3</span>
+              <span>HTML5 &amp; CSS3</span>
             </div>
-            <div class="edu-highlight">
-              <i class="bx bxl-javascript"></i>
-              <span>JavaScript</span>
-            </div>
-            <!-- <div class="edu-highlight">
-              <i class="bx bxl-react"></i>
-              <span>React.js</span>
-            </div> -->
             <div class="edu-highlight">
               <i class="bx bx-mobile-alt"></i>
-              <span>Responsive Design</span>
+              <span data-en="Responsive Design" data-ar="التصميم المتجاوب">Responsive Design</span>
             </div>
           </div>
         </div>
@@ -272,12 +260,27 @@
 
     <!-- Projects Section -->
     <section class="projects" id="projects">
-      <h2 class="section-title">Latest <span>Projects </span></h2>
+      <h2 class="section-title" data-en="Latest <span>Projects</span>" data-ar="أحدث <span>المشاريع</span>">Latest <span>Projects</span></h2>
       <div class="projects-grid">
-        <div class="project-card">
+
+        <!-- Project 1: Sadaqah -->
+        <div class="project-card" 
+             data-title-en="Sadaqah" data-title-ar="صدقة"
+             data-desc-en="Sadaqah is an Islamic website that provides Morning and Evening Adhkar, Post-Prayer Adhkar, and the Holy Quran recited by a selection of renowned reciters."
+             data-desc-ar="صدقة هو موقع إسلامي يوفر أذكار الصباح والمساء، وأذكار ما بعد الصلاة، والقرآن الكريم بتلاوة نخبة من القراء المشهورين."
+             data-challenges-en="Integrating multiple Quran APIs, ensuring accurate Arabic text display, optimizing audio streaming for reciters."
+             data-challenges-ar="دمج عدة واجهات برمجية للقرآن، ضمان عرض النص العربي بدقة، تحسين بث الصوت للقراء."
+             data-github="https://github.com/AHMEDEMAD84e"
+             data-live="https://sadaqah.vercel.app/">
+          <div class="project-image-wrapper">
+            <img src="sadqah.png" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=600&q=70';" alt="Sadaqah Project" loading="lazy" class="project-img" />
+            <div class="project-overlay">
+              <button class="btn-details" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
+            </div>
+          </div>
           <div class="project-info">
             <h3>Sadaqah</h3>
-            <p>
+            <p data-en="Sadaqah is an Islamic website that provides Morning and Evening Adhkar, Post-Prayer Adhkar, and the Holy Quran recited by a selection of renowned reciters." data-ar="موقع إسلامي يوفر أذكار الصباح والمساء والقرآن الكريم بتلاوة نخبة من القراء المشهورين.">
               Sadaqah is an Islamic website that provides Morning and Evening Adhkar, Post-Prayer Adhkar, and the Holy Quran recited by a selection of renowned reciters.
             </p>
             <div class="project-links">
@@ -290,37 +293,62 @@
             </div>
           </div>
         </div>
-        <div class="project-card">
+
+        <!-- Project 2: Educational Platform -->
+        <div class="project-card"
+             data-title-en="Educational Platform" data-title-ar="المنصة التعليمية"
+             data-desc-en="Online learning portal with course management and user-friendly interface."
+             data-desc-ar="بوابة تعليمية إلكترونية مع إدارة الكورسات وواجهة مستخدم سهلة."
+             data-challenges-en="Building a scalable course management system, designing an intuitive UX for students and instructors, handling dynamic content loading."
+             data-challenges-ar="بناء نظام إدارة كورسات قابل للتوسع، تصميم تجربة مستخدم بديهية للطلاب والمدرسين، معالجة تحميل المحتوى الديناميكي."
+             data-github="https://github.com/AHMEDEMAD84e/Education-platform"
+             data-live="https://education-platform-ten-kappa.vercel.app/">
+          <div class="project-image-wrapper">
+            <img src="منصة BioChemic - Google Chrome 8_25_2026 1_57_45 AM.png" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=600&q=70';" alt="Educational Platform" loading="lazy" class="project-img" />
+            <div class="project-overlay">
+              <button class="btn-details" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
+            </div>
+          </div>
           <div class="project-info">
-            <h3>Educational Platform</h3>
-            <p>
-              Online learning portal with course management and user-friendly
-              interface.
+            <h3 data-en="Educational Platform" data-ar="المنصة التعليمية">Educational Platform</h3>
+            <p data-en="Online learning portal with course management and user-friendly interface." data-ar="بوابة تعليمية إلكترونية مع إدارة الكورسات وواجهة مستخدم سهلة.">
+              Online learning portal with course management and user-friendly interface.
             </p>
             <div class="project-links">
-              <a
-                href="https://github.com/AHMEDEMAD84e/Education-platform"
-                target="_blank"
-                class="project-link"
-              ><i class="bx bxl-github"></i> GitHub</a>
+              <a href="https://github.com/AHMEDEMAD84e/Education-platform" target="_blank" class="project-link">
+                <i class="bx bxl-github"></i> GitHub
+              </a>
               <a href="https://education-platform-ten-kappa.vercel.app/" target="_blank" class="project-link live-demo">
                 <i class="bx bx-link-external"></i> Live Demo
               </a>
             </div>
           </div>
         </div>
-        <div class="project-card">
+
+        <!-- Project 3: SHILED -->
+        <div class="project-card"
+             data-title-en="SHIELD" data-title-ar="شيلد"
+             data-desc-en="Link Shield is an advanced security tool designed to protect users from phishing attacks through an intelligent and user-friendly approach."
+             data-desc-ar="شيلد هو أداة أمنية متقدمة مصممة لحماية المستخدمين من هجمات التصيد الاحتيالي من خلال نهج ذكي وسهل الاستخدام."
+             data-challenges-en="Implementing real-time URL scanning, handling false positives in phishing detection, designing an intuitive security dashboard."
+             data-challenges-ar="تنفيذ مسح URL في الوقت الفعلي، معالجة النتائج الإيجابية الكاذبة في كشف التصيد، تصميم لوحة تحكم أمنية بديهية."
+             data-github="https://github.com/AHMEDEMAD84e/SHILED"
+             data-live="https://shiled.vercel.app/">
+          <div class="project-image-wrapper">
+            <img src="shield.png" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&q=70';" alt="SHIELD Security Project" loading="lazy" class="project-img" />
+            <div class="project-overlay">
+              <button class="btn-details" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
+            </div>
+          </div>
           <div class="project-info">
-            <h3>SHILED</h3>
-            <p>
-              Link Shield is an advanced security tool designed to protect users from phishing attacks through an intelligent and user-friendly approach
+            <h3>SHIELD</h3>
+            <p data-en="Link Shield is an advanced security tool designed to protect users from phishing attacks through an intelligent and user-friendly approach." data-ar="أداة أمنية متقدمة تحمي المستخدمين من هجمات التصيد الاحتيالي.">
+              Link Shield is an advanced security tool designed to protect users from phishing attacks through an intelligent and user-friendly approach.
             </p>
             <div class="project-links">
-              <a
-                href="https://github.com/AHMEDEMAD84e/SHILED"
-                target="_blank"
-                class="project-link"
-              ><i class="bx bxl-github"></i> GitHub</a>
+              <a href="https://github.com/AHMEDEMAD84e/SHILED" target="_blank" class="project-link">
+                <i class="bx bxl-github"></i> GitHub
+              </a>
               <a href="https://shiled.vercel.app/" target="_blank" class="project-link live-demo">
                 <i class="bx bx-link-external"></i> Live Demo
               </a>
@@ -331,10 +359,38 @@
       </div>
     </section>
 
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-box">
+        <button class="modal-close" id="modal-close-btn" aria-label="Close modal">
+          <i class="bx bx-x"></i>
+        </button>
+        <div class="modal-img-wrapper">
+          <img id="modal-img" src="" alt="Project Preview" loading="lazy" />
+        </div>
+        <div class="modal-content">
+          <h2 id="modal-title"></h2>
+          <p id="modal-desc" class="modal-desc"></p>
+          <div class="modal-challenges-section">
+            <h4 id="modal-challenges-label">Challenges & Solutions</h4>
+            <p id="modal-challenges" class="modal-challenges-text"></p>
+          </div>
+          <div class="modal-actions">
+            <a id="modal-github" href="#" target="_blank" class="btn btn-outline">
+              <i class="bx bxl-github"></i> GitHub
+            </a>
+            <a id="modal-live" href="#" target="_blank" class="btn btn-primary">
+              <i class="bx bx-link-external"></i> <span id="modal-live-label">Live Demo</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Feedback / Testimonials Section -->
     <section class="feedback" id="feedback">
-      <h2 class="section-title">What People <span>Say</span></h2>
-      <p class="feedback-subtitle">Hear what clients and colleagues have to say about working with me.</p>
+      <h2 class="section-title" data-en="What People <span>Say</span>" data-ar="ماذا يقول <span>الناس</span>">What People <span>Say</span></h2>
+      <p class="feedback-subtitle" data-en="Hear what clients and colleagues have to say about working with me." data-ar="استمع لما يقوله العملاء والزملاء عن العمل معي.">Hear what clients and colleagues have to say about working with me.</p>
       <div class="testimonials-grid">
         <!-- Testimonial 1 -->
         <div class="testimonial-card">
@@ -345,13 +401,6 @@
             Ahmed is an incredibly talented developer. He builds websites 
             with great attention to detail and always delivers projects on time. Highly recommended!
           </p>
-          <!-- <div class="testimonial-stars">
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-          </div> -->
           <div class="testimonial-author">
             <div class="testimonial-avatar">
               <i class="bx bxs-user-circle"></i>
@@ -372,13 +421,6 @@
             Working with Ahmed was a great experience. His React.js skills are top-notch and he
             always finds clean, efficient solutions to complex problems.
           </p>
-          <!-- <div class="testimonial-stars">
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-          </div> -->
           <div class="testimonial-author">
             <div class="testimonial-avatar">
               <i class="bx bxs-user-circle"></i>
@@ -402,13 +444,6 @@
             and grant you success in this life and the Hereafter. Keep believing in yourself you truly deserve every good thing that comes your way.
             I'm so proud of you, Ahmed. Wishing you all the success and happiness.🤍
           </p>
-          <!-- <div class="testimonial-stars">
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bx-star"></i>
-          </div> -->
           <div class="testimonial-author">
             <div class="testimonial-avatar">
               <i class="bx bxs-user-circle"></i>
@@ -424,25 +459,25 @@
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-      <h2 class="section-title">Con<span>tact</span></h2>
-      <p class="contact-subtitle">Feel free to reach out — I'm always open to new opportunities and collaborations.</p>
+      <h2 class="section-title" data-en="Con<span>tact</span>" data-ar="تواصل <span>معي</span>">Con<span>tact</span></h2>
+      <p class="contact-subtitle" data-en="Feel free to reach out — I'm always open to new opportunities and collaborations." data-ar="لا تتردد في التواصل — أنا دائماً منفتح على الفرص والتعاون الجديد.">Feel free to reach out — I'm always open to new opportunities and collaborations.</p>
       <div class="contact-cards">
-        <a href="mailto:ahmadkareem7@gmail.com" class="contact-card">
+        <a href="mailto:ahmadkareem7@gmail.com?subject=Hello Ahmed - Portfolio Inquiry" class="contact-card" id="email-card">
           <div class="contact-card-icon">
             <i class="bx bx-envelope"></i>
           </div>
           <div class="contact-card-info">
-            <span class="contact-card-label">Email</span>
+            <span class="contact-card-label" data-en="Email" data-ar="البريد الإلكتروني">Email</span>
             <span class="contact-card-value">ahmadkareem7@gmail.com</span>
           </div>
           <i class="bx bx-right-arrow-alt contact-card-arrow"></i>
         </a>
-        <a href="https://wa.me/201123564849" target="_blank" class="contact-card">
+        <a href="https://wa.me/201123564849" target="_blank" class="contact-card" id="whatsapp-card">
           <div class="contact-card-icon">
-            <i class="bx bx-phone"></i>
+            <i class="bx bxl-whatsapp"></i>
           </div>
           <div class="contact-card-info">
-            <span class="contact-card-label">Phone</span>
+            <span class="contact-card-label" data-en="WhatsApp" data-ar="واتساب">WhatsApp</span>
             <span class="contact-card-value">+20 01123564849</span>
           </div>
           <i class="bx bx-right-arrow-alt contact-card-arrow"></i>
@@ -472,7 +507,7 @@
 
     <!-- Footer -->
     <footer>
-      <p>&copy; 2026 Ahmed Emad. All rights reserved.</p>
+      <p>&copy; 2026 Ahmed Emad. <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">All rights reserved.</span></p>
     </footer>
 
     <script src="portfolio.js"></script>
